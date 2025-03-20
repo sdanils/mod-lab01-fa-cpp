@@ -5,7 +5,9 @@
 
 #include "fun.h"
 
-using namespace std;
+using std::cout;
+using std::string;
+using std::vector;
 
 int main() {
   vector<string> strings = {"qwe4  gftt e 555gr rrgr  grhh ",
@@ -15,10 +17,10 @@ int main() {
                             " bad dog ",
                             " six monkeys"};
 
-  if (faStr1(strings[0].c_str()) != 6) {
+  if (faStr1(strings[0].c_str()) != 4) {
     cout << " Uncor 0";
   }
-  if (faStr1(strings[1].c_str()) != 1) {
+  if (faStr1(strings[1].c_str()) != 0) {
     cout << " Uncor 1";
   }
   if (faStr2(strings[2].c_str()) != 0) {

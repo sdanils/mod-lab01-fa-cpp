@@ -5,13 +5,21 @@ unsigned int faStr1(const char *str) {
   int count = 0;
   bool inWord = false;
   while (*str) {
-    if (*str != ' ' && inWord == false) {
-      count++;
-      inWord = true;
-    } else if (*str == ' ' && inWord == true) {
-      inWord = false;
+    if (*str != ' ') {
+      bool cor = true;
+      while (*str && *str != ' ') {
+        if (*str < 97 || *str >= 122) {
+          cor = false;
+        }
+        str++;
+      }
+      if (cor) {
+        count++;
+      }
     }
-    str++;
+    if (*str) {
+      str++;
+    }
   }
   return count;
 }
